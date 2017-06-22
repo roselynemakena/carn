@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/dashboard'
+  get 'all_users', to: 'users#index'
+
+
+  get 'super_admins/dashboard'
+
+
+  resources :user_types
   devise_for :users
   root 'welcome#home'
 
