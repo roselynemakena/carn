@@ -48,9 +48,8 @@
         <%=link_to "Carn", root_path, class: 'navbar-brand'%>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "See Specials", "/path1"  %></li>
+            <li><%= link_to "Browse restaurants", "/path2"  %></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
           <% if current_user %>
@@ -69,7 +68,7 @@
       </div>
     </div>
 
-    <div class="containers">
+    <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <%= bootstrap_flash %>

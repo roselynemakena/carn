@@ -23,6 +23,9 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 
 gem 'devise-bootstrap-views'
+
+gem "font-awesome-rails"
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
