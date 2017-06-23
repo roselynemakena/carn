@@ -19,12 +19,13 @@
 
 
       <hr>
-      <p class="muted">Created: <%= time_ago_in_words(restaurant.created_at) %> ago.. by %></p>
+      <p class="muted">Created: <%= time_ago_in_words(restaurant.created_at) %> ago..</p>
 
       <span class="muted"><i>Category:</i></span><span class="muted label label-info"> <%= restaurant.restaurant_name%></span>
       <hr>
 
        <%= link_to "<i class='fa fa-tasks' class='blue'></i> View Menu".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Edit Menus".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name, restaurant_description: restaurant.restaurant_description),:class => 'btn btn-default btn-xs' %>
 
 
     </div>
