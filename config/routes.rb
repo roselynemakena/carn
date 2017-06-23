@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :menus
   resources :restaurants
+  resources :menus
+
   get 'users/dashboard'
   # get 'users', to: 'users#index'
 
