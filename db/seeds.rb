@@ -31,3 +31,11 @@ user_type4 = UserType.create(user_type: 'User')
 
 
 
+
+r1 = Restaurant.create(restaurant_name: "Carnivore", restaurant_description: "The Carnivore Is the Ultimate 'beast of a Feast'  a Variety of Meats Including Ostrich, Crocodile and Camel, Are Roasted Over Charcoal and Carved at Your Table. Delicious Side Dishes and an Exceptional Array of Sauces Complement This Fixed Price Feast That Also Includes Soup,a Selection of Desserts and Kenyan Coffee. Set in Attractive Tropical Gardens, the Service and the Décor Are Outstanding.",
+	restaurant_location: "Nairobi Ke")
+
+
+
+
+

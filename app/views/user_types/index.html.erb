@@ -14,7 +14,7 @@
   <tbody>
     <% @user_types.each do |user_type| %>
       <tr>
-        <td><%= link_to user_type.id, user_type_path(user_type) %></td>
+        <td><%= link_to user_type.id, user_type_path(users_type) %></td>
         <td><%= user_type.user_title %></td>
         <td><%=l user_type.created_at %></td>
         <td>
