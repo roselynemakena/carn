@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622082900) do
+ActiveRecord::Schema.define(version: 20170622145026) do
+
+  create_table "menus", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "restaurant_name"
+    t.text     "restaurant_description"
+    t.string   "restaurant_location"
+    t.string   "restaurant_image"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "user_types", force: :cascade do |t|
     t.string   "user_type",  default: "4"

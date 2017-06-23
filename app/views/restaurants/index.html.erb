@@ -1,0 +1,42 @@
+<%- model_class = Restaurant -%>
+<div class="page-header">
+  <center><h3>Our Restaurants</h3></center>
+  </hr>
+  <%= link_to "New", new_restaurant_path, :class => 'btn btn-primary pull-right' %>
+</div>
+
+<%if @restaurants %>
+
+    <% @restaurants.each do |restaurant| %>
+
+      <div class="card col-md-3 card00">
+    <i class="fa fa-user fa-3x"></i>
+    <h3><%= restaurant.restaurant_name %></h3>
+      
+      <hr>
+      <h5><h6><b>Description</b></h6><%= restaurant.restaurant_description%></h5>
+      <h6 class="muted"><b><i>Restaurant location: </i></b><%= restaurant.restaurant_location%></h6>
+
+
+      <hr>
+      <p class="muted">Created: <%= time_ago_in_words(restaurant.created_at) %> ago.. by %></p>
+
+      <span class="muted"><i>Category:</i></span><span class="muted label label-info"> <%= restaurant.restaurant_name%></span>
+      <hr>
+
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> View Menu".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+
+
+    </div>
+
+<% end %>
+
+
+
+
+<% end %>
+
+
+
+
+
