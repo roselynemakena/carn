@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  before_action :ensure_admin!, only: [:new]
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -70,5 +74,16 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:restaurant_name, :restaurant_description, :restaurant_location, :restaurant_image)
+    end
+
+
+    def ensure_admin!
+
+      unless current_user && User.is_admin?(current_user)
+
+        flash[:danger] = "You must be an Admin!"
+        
+      end
+      
     end
 end
