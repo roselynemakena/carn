@@ -2,7 +2,9 @@
 <div class="page-header">
   <center><h3>Our Restaurants</h3></center>
   </hr>
+  <% if current_user && User.is_admin?(current_user)%>
   <%= link_to "New", new_restaurant_path, :class => 'btn btn-primary pull-right' %>
+  <% end %>
 </div>
 
 <%if @restaurants %>

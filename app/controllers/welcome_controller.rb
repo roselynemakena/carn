@@ -20,18 +20,17 @@ class WelcomeController < ApplicationController
 
 		  	redirect_to 'super_admins#dashboard'
 
-
-
-
 		  else
 
-		  	redirect_to 'client#dashboard'
-
-
+		  	redirect_to 'client#dashboard'	
 
 		  end
 	end
 
 
+  end
+
+  def index
+  	
   end
 end

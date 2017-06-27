@@ -17,28 +17,28 @@
 
   <div class="form-group">
     <%= f.label :restaurant_name, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-4">
       <%= f.text_field :restaurant_name, :class => 'form-control' %>
     </div>
     <%=f.error_span(:restaurant_name) %>
   </div>
   <div class="form-group">
     <%= f.label :restaurant_description, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :restaurant_description, :class => 'form-control' %>
+    <div class="col-lg-4">
+      <%= f.text_area :restaurant_description, :class => 'form-control' %>
     </div>
     <%=f.error_span(:restaurant_description) %>
   </div>
   <div class="form-group">
     <%= f.label :restaurant_location, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-4">
       <%= f.text_field :restaurant_location, :class => 'form-control' %>
     </div>
     <%=f.error_span(:restaurant_location) %>
   </div>
   <div class="form-group">
     <%= f.label :restaurant_image, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-2">
       <%= f.text_field :restaurant_image, :class => 'form-control' %>
     </div>
     <%=f.error_span(:restaurant_image) %>
@@ -46,8 +46,8 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      <%= f.submit nil, :class => 'btn btn-secondary' %>
+      <%= link_to "Cancel",
                 restaurants_path, :class => 'btn btn-default' %>
     </div>
   </div>

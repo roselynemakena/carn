@@ -10,6 +10,9 @@
 u1 = User.new(email: 'thesuperadmin@gmail.com', password: '123456', user_type_id: 1)
 u1.save!
 
+u5 = User.new(email: 'anothersuperadmin@gmail.com', password: '123456', user_type_id: 1)
+u5.save!
+
 
 u2 = User.new(email: 'restaurantadmin@gmail.com', password: '123456', user_type_id: 2)
 u2.save!

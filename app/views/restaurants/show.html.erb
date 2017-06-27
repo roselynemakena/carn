@@ -1,20 +1,19 @@
-<%- model_class = Restaurant -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h5 align="center"><strong>Viewing <%= @restaurant.restaurant_name %> </strong></h5>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:restaurant_name) %>:</strong></dt>
+  <dt><strong>Restaurant name</strong></dt>
   <dd><%= @restaurant.restaurant_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:restaurant_description) %>:</strong></dt>
+  <dt><strong>Restaurant Description</strong></dt>
   <dd><%= @restaurant.restaurant_description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:restaurant_location) %>:</strong></dt>
+  <dt><strong>Restaurant location</strong></dt>
   <dd><%= @restaurant.restaurant_location %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:restaurant_image) %>:</strong></dt>
+  <dt><strong>Images</strong></dt>
   <dd><%= @restaurant.restaurant_image %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to "Back",
               restaurants_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_restaurant_path(@restaurant), :class => 'btn btn-default' %>
