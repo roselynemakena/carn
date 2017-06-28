@@ -27,7 +27,16 @@
       <hr>
 
        <%= link_to "<i class='fa fa-tasks' class='blue'></i> View Menu".html_safe, "#",:class => 'btn btn-default btn-xs' %>
-       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Edit Menus".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name, restaurant_description: restaurant.restaurant_description),:class => 'btn btn-default btn-xs' %>
+       <% if current_user && User.is_admin?(current_user) %>
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Edit Menus".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name),:class => 'btn btn-default btn-xs' %>
+
+       <% elsif current_user && User.is_restaurant_admin?(current_user) %>
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Place Order".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name),:class => 'btn btn-default btn-xs' %>
+
+       <% else %>
+
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Login to place order".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name),:class => 'btn btn-default btn-xs' %>
+       <% end %>
 
 
     </div>
