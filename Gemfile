@@ -57,10 +57,10 @@ group :production do
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    gem 'sqlite3'
+  gem 'sqlite3'
   gem 'better_errors'
   gem 'byebug', platform: :mri
-   gem "binding_of_caller"
+  gem "binding_of_caller"
 
 end
 
