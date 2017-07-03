@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :restaurants
+  resources :restaurants do
+    resources :menus
+  end
+  resources :restaurants do
   resources :menus
+end
 
   get 'users/dashboard'
   # get 'users', to: 'users#index'

@@ -26,6 +26,8 @@ gem 'devise-bootstrap-views'
 
 gem "font-awesome-rails"
 
+gem 'nested_scaffold'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
