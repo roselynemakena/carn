@@ -3,7 +3,11 @@
   <center><h3>Our Restaurants</h3></center>
   </hr>
   <% if current_user && User.is_admin?(current_user)%>
-  <%= link_to "New", new_restaurant_path, :class => 'btn btn-primary pull-right' %>
+  <div class="container">
+  <%= link_to "Add New Restaurant", new_restaurant_path, :class => 'btn btn-primary' %>
+
+  </div>
+
   <% end %>
 </div>
 
@@ -26,7 +30,7 @@
       <span class="muted"><i>Category:</i></span><span class="muted label label-info"> <%= restaurant.restaurant_name%></span>
       <hr>
 
-       <%= link_to "<i class='fa fa-tasks' class='blue'></i> View Menu".html_safe, "#",:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> View Menu".html_safe, restaurant_menus_path(restaurant),:class => 'btn btn-default btn-xs' %>
        <% if current_user && User.is_admin?(current_user) %>
        <%= link_to "<i class='fa fa-tasks' class='blue'></i> Edit Menus".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name),:class => 'btn btn-default btn-xs' %>
 
@@ -35,7 +39,7 @@
 
        <% else %>
 
-       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Login to place order".html_safe, new_menu_path(restaurant_name: restaurant.restaurant_name),:class => 'btn btn-default btn-xs' %>
+       <%= link_to "<i class='fa fa-tasks' class='blue'></i> Login to place order".html_safe, new_restaurant_menu_path(restaurant),:class => 'btn btn-default btn-xs' %>
        <% end %>
 
 

@@ -1,68 +1,69 @@
 class MenusController < ApplicationController
+  before_action :set_menus
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  
+
+  # GET restaurants/1/menus
   def index
-    @menus = Menu.all
+    @menus = @restaurant.menus
   end
 
+  # GET restaurants/1/menus/1
   def show
-  end
-
-  def new
-
     @menu = Menu.new
-    @restaurant_name = params[:restaurant_name]
-    # @restaurant_description = params[:restaurant_description]
-
-    # raise @restaurant_name
 
   end
 
+  # GET restaurants/1/menus/new
+  def new
+    @menu = @restaurant.menus.build
+  end
+
+  # GET restaurants/1/menus/1/edit
   def edit
   end
 
+  # POST restaurants/1/menus
   def create
-    @menu = Menu.new(menu_params)
+    @menu = @restaurant.menus.build(menu_params)
 
-    respond_to do |format|
-      if @menu.save
-        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
-        format.json { render :show, status: :created, location: @menu }
-      else
-        format.html { render :new }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
+    if @menu.save
+      redirect_to([@menu.restaurant, @menu], notice: 'Menu was successfully created.')
+    else
+      render action: 'new'
     end
   end
 
+  # PUT restaurants/1/menus/1
   def update
-    respond_to do |format|
-      if @menu.update(menu_params)
-        format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
-        format.json { render :show, status: :ok, location: @menu }
-      else
-        format.html { render :edit }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
+    if @menu.update_attributes(menu_params)
+      redirect_to([@menu.restaurant, @menu], notice: 'Menu was successfully updated.')
+    else
+      render action: 'edit'
     end
   end
 
+  # DELETE restaurants/1/menus/1
   def destroy
     @menu.destroy
-    respond_to do |format|
-      format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to restaurant_menus_url(@restaurant)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_menu
-      @menu = Menu.find(params[:id])
+    def set_menus
+      @restaurant = Restaurant.find(params[:restaurant_id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_menu
+      @menu = @restaurant.menus.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
     def menu_params
-      params.require(:menu).permit(:restaurant_id)
+      params.require(:menu).permit(:menu_name, :menu_description)
     end
 end

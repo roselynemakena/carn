@@ -2,6 +2,10 @@
 
 one:
   restaurant: one
+  menu_name: MyString
+  menu_description: MyText
 
 two:
   restaurant: two
+  menu_name: MyString
+  menu_description: MyText

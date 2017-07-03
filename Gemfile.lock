@@ -252,6 +252,7 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
+    nested_scaffold (1.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -365,6 +366,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  nested_scaffold
   mini_magick
   pg
   puma (~> 3.0)
