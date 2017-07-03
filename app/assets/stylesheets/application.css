@@ -50,6 +50,8 @@
 
 .card {
   float: left;
+  width: 30%;
+  align-items: center;
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;

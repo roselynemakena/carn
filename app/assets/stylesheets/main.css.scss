@@ -1,5 +1,6 @@
 .card00 {
-      box-shadow: .5px .5px .5px .6px grey;
+      box-shadow: .5px .5px .5px .6px #cccaca;
+
     backgrund-color: yellow;
     border-radius: 5px;
     padding-bottom: 10px !important;
@@ -7,4 +8,10 @@
     margin-left: 20px !important;
     text-align: center;
 
+}
+
+.center {
+    margin-left: 23%;
+    width: 50%;
+    padding: 10px;
 }
