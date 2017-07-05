@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :restaurants do
-    resources :menus
-  end
+  resources :images
+
   resources :restaurants do
   resources :menus
 end
@@ -14,7 +13,7 @@ end
 
 
   resources :user_types
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :edit]
   devise_for :users
   root 'welcome#home'
 
