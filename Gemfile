@@ -42,7 +42,6 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-gem 'fog'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '_> 3.0'
 # Use ActiveModel has_secure_password
@@ -54,6 +53,7 @@ gem 'fog'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'fog'
 
   end
 
